@@ -6,7 +6,7 @@
 //  Copyright © ___YEAR___ ___ORGANIZATIONNAME___. All rights reserved.
 //
 
-import CellKit
+import UIKit
 
 struct ___VARIABLE_sourceCellIdentifier___CellModel: CellModelSelectable {
 
@@ -15,7 +15,7 @@ struct ___VARIABLE_sourceCellIdentifier___CellModel: CellModelSelectable {
     let selectionHandler: (() -> Void)?
 }
 
-extension ___VARIABLE_sourceCellIdentifier___CellModel: CellModel, ReusableCellConvertible {
+extension ___VARIABLE_sourceCellIdentifier___CellModel: CellModelConvertible {
     typealias Cell = ___VARIABLE_sourceCellIdentifier___Cell
 
     var cellHeight: Double {
