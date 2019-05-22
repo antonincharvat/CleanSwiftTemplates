@@ -6,7 +6,7 @@
 //  Copyright © ___YEAR___ ___ORGANIZATIONNAME___. All rights reserved.
 //
 
-import CellKit
+import UIKit
 
 final class ___VARIABLE_sourceCellIdentifier___Cell: UITableViewCell {
 
