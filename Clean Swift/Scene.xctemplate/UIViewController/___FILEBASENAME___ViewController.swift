@@ -14,7 +14,7 @@ protocol ___VARIABLE_sceneName___DisplayLogic: class {
 }
 
 final class ___VARIABLE_sceneName___ViewController: UIViewController, ___VARIABLE_sceneName___DisplayLogic {
-    var interactor: ___VARIABLE_sceneName___BusinessLogic?
+    var interactor: (___VARIABLE_sceneName___BusinessLogic & ___VARIABLE_sceneName___DataStore)!
     var router: (NSObjectProtocol & ___VARIABLE_sceneName___RoutingLogic & ___VARIABLE_sceneName___DataPassing)?
 
     // MARK: Object lifecycle
@@ -34,14 +34,12 @@ final class ___VARIABLE_sceneName___ViewController: UIViewController, ___VARIABL
     private func setupCleanSwift() {
         let viewController = self
         let interactor = ___VARIABLE_sceneName___Interactor()
-        let presenter = ___VARIABLE_sceneName___Presenter()
         let router = ___VARIABLE_sceneName___Router()
         viewController.interactor = interactor
         viewController.router = router
-        interactor.presenter = presenter
-        presenter.viewController = viewController
         router.viewController = viewController
         router.dataStore = interactor
+        interactor.displayLogic = viewController
     }
     
     // MARK: Routing
@@ -65,8 +63,7 @@ final class ___VARIABLE_sceneName___ViewController: UIViewController, ___VARIABL
     // MARK: ___VARIABLE_sceneName___DisplayLogic
 
     func doSomething() {
-        let request = ___VARIABLE_sceneName___.Request(type: <#___VARIABLE_sceneName___.RequestType#>)
-        interactor?.process(request: request)
+        interactor.process(request: ___VARIABLE_sceneName___.Request(type: <#___VARIABLE_sceneName___.RequestType#>))
     }
     
     func displaySomething(viewModel: ___VARIABLE_sceneName___.ViewModel) {

@@ -18,12 +18,10 @@ protocol ___VARIABLE_sceneName___DataStore {
 }
 
 final class ___VARIABLE_sceneName___Interactor: ___VARIABLE_sceneName___BusinessLogic, ___VARIABLE_sceneName___DataStore {
-    var presenter: ___VARIABLE_sceneName___PresentationLogic?
+    var displayLogic: ___VARIABLE_sceneName___DisplayLogic?
     var worker: ___VARIABLE_sceneName___Worker?
     //var name: String = ""
     
-    // MARK: Do something
-
     func process(request: ___VARIABLE_sceneName___.Request) {
         switch request.type {
         }
