@@ -10,7 +10,7 @@
 import UIKit
 
 protocol ___VARIABLE_sceneName___DisplayLogic: class {
-  func displaySomething(viewModel: ___VARIABLE_sceneName___.ViewModel)
+    func displaySomething(viewModel: ___VARIABLE_sceneName___.ViewModel)
 }
 
 final class ___VARIABLE_sceneName___ViewController: UIViewController, ___VARIABLE_sceneName___DisplayLogic {
@@ -65,7 +65,7 @@ final class ___VARIABLE_sceneName___ViewController: UIViewController, ___VARIABL
     // MARK: ___VARIABLE_sceneName___DisplayLogic
 
     func doSomething() {
-        let request = Dashboard.Request(type: <#___VARIABLE_sceneName___.RequestType#>)
+        let request = ___VARIABLE_sceneName___.Request(type: <#___VARIABLE_sceneName___.RequestType#>)
         interactor?.process(request: request)
     }
     

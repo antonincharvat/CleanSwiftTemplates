@@ -10,11 +10,11 @@
 import UIKit
 
 @objc protocol ___VARIABLE_sceneName___RoutingLogic {
-  //func routeToSomewhere(segue: UIStoryboardSegue?)
+    //func routeToSomewhere(segue: UIStoryboardSegue?)
 }
 
 protocol ___VARIABLE_sceneName___DataPassing {
-  var dataStore: ___VARIABLE_sceneName___DataStore? { get }
+    var dataStore: ___VARIABLE_sceneName___DataStore? { get }
 }
 
 final class ___VARIABLE_sceneName___Router: NSObject, ___VARIABLE_sceneName___RoutingLogic, ___VARIABLE_sceneName___DataPassing {
