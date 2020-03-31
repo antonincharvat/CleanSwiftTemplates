@@ -12,10 +12,14 @@ final class ___VARIABLE_sourceCellIdentifier___Cell: UITableViewCell {
 
     // MARK: - Outlets
 
-    // code..
+    //...
+
+    // MARK: - Actions
 }
 
 extension ___VARIABLE_sourceCellIdentifier___Cell: CellConfigurable {
+
     func configure(with model: ___VARIABLE_sourceCellIdentifier___CellModel) {
+        //...
     }
 }

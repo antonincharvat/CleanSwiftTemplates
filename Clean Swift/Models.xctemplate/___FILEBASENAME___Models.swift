@@ -10,10 +10,12 @@
 import Foundation
 
 enum ___VARIABLE_sceneName___ {
-    // MARK: Use cases
-    
+
+    // MARK: - Use cases
+
     struct Request {
         enum RequestType {
+            case doSomething
         }
 
         let type: RequestType
