@@ -9,15 +9,16 @@
 
 import UIKit
 
-protocol ___VARIABLE_sceneName___PresentationLogic {
+protocol ___VARIABLE_sceneName___PresentationLogic: AnyObject {
     func presentSomething(response: ___VARIABLE_sceneName___.Response)
 }
 
 final class ___VARIABLE_sceneName___Presenter: ___VARIABLE_sceneName___PresentationLogic {
+
     weak var viewController: ___VARIABLE_sceneName___DisplayLogic?
-    
-    // MARK: Do something
-    
+
+    // MARK: - PresentationLogic
+
     func presentSomething(response: ___VARIABLE_sceneName___.Response) {
         let viewModel = ___VARIABLE_sceneName___.ViewModel()
         viewController?.displaySomething(viewModel: viewModel)

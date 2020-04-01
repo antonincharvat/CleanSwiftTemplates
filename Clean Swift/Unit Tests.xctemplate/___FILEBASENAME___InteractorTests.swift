@@ -11,48 +11,50 @@
 import XCTest
 
 class ___VARIABLE_sceneName___InteractorTests: XCTestCase {
-    // MARK: Subject under test
-  
+
+    // MARK: - Subject under test
+
     var sut: ___VARIABLE_sceneName___Interactor!
-  
-    // MARK: Test lifecycle
-  
+
+    // MARK: - Test lifecycle
+
     override func setUp() {
         super.setUp()
         setup___VARIABLE_sceneName___Interactor()
     }
-  
+
     override func tearDown() {
         super.tearDown()
     }
-  
-    // MARK: Test setup
-    
+
+    // MARK: - Test setup
+
     func setup___VARIABLE_sceneName___Interactor() {
         sut = ___VARIABLE_sceneName___Interactor()
     }
-  
-    // MARK: Test doubles
-    
+
+    // MARK: - Test doubles
+
     class ___VARIABLE_sceneName___PresentationLogicSpy: ___VARIABLE_sceneName___PresentationLogic {
+
         var presentSomethingCalled = false
-        
+
         func presentSomething(response: ___VARIABLE_sceneName___.Something.Response) {
             presentSomethingCalled = true
         }
     }
-  
-    // MARK: Tests
-    
+
+    // MARK: - Tests
+
     func testDoSomething() {
         // Given
         let spy = ___VARIABLE_sceneName___PresentationLogicSpy()
         sut.presenter = spy
         let request = ___VARIABLE_sceneName___.Something.Request()
-        
+
         // When
         sut.doSomething(request: request)
-        
+
         // Then
         XCTAssertTrue(spy.presentSomethingCalled, "doSomething(request:) should ask the presenter to format the result")
     }

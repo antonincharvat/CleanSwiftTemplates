@@ -16,6 +16,7 @@ struct ___VARIABLE_sourceCellIdentifier___CellModel: CellModelSelectable {
 }
 
 extension ___VARIABLE_sourceCellIdentifier___CellModel: CellModelConvertible {
+
     typealias Cell = ___VARIABLE_sourceCellIdentifier___Cell
 
     var cellHeight: Double {

@@ -9,66 +9,61 @@
 
 import UIKit
 
-protocol ___VARIABLE_sceneName___DisplayLogic: class {
+protocol ___VARIABLE_sceneName___DisplayLogic: AnyObject {
     func displaySomething(viewModel: ___VARIABLE_sceneName___.ViewModel)
 }
 
-final class ___VARIABLE_sceneName___ViewController: UIViewController, ___VARIABLE_sceneName___DisplayLogic {
-    var interactor: ___VARIABLE_sceneName___BusinessLogic?
-    var router: (NSObjectProtocol & ___VARIABLE_sceneName___RoutingLogic & ___VARIABLE_sceneName___DataPassing)?
+final class ___VARIABLE_sceneName___ViewController: ___VARIABLE_viewControllerSubclass___, ___VARIABLE_sceneName___DisplayLogic {
 
-    // MARK: Object lifecycle
-    
+    var interactor: ___VARIABLE_sceneName___BusinessLogic?
+    var router: (___VARIABLE_sceneName___RoutingLogic & ___VARIABLE_sceneName___DataPassing)?
+
+    // MARK: - Object lifecycle
+
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         setupCleanSwift()
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setupCleanSwift()
     }
-    
-    // MARK: Setup
-    
+
+    // MARK: - Setup
+
     private func setupCleanSwift() {
         let viewController = self
         let interactor = ___VARIABLE_sceneName___Interactor()
         let presenter = ___VARIABLE_sceneName___Presenter()
         let router = ___VARIABLE_sceneName___Router()
+        let worker = ___VARIABLE_sceneName___Worker()
         viewController.interactor = interactor
         viewController.router = router
         interactor.presenter = presenter
+        interactor.worker = worker
         presenter.viewController = viewController
         router.viewController = viewController
         router.dataStore = interactor
     }
-    
-    // MARK: Routing
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let scene = segue.identifier {
-            let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
-            if let router = router, router.responds(to: selector) {
-                router.perform(selector, with: segue)
-            }
-        }
-    }
-    
-    // MARK: View lifecycle
-    
+
+    // MARK: - View lifecycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
         doSomething()
     }
-    
-    // MARK: ___VARIABLE_sceneName___DisplayLogic
+
+    // MARK: - BusinessLogic
 
     func doSomething() {
-        let request = ___VARIABLE_sceneName___.Request(type: <#___VARIABLE_sceneName___.RequestType#>)
+        let request = ___VARIABLE_sceneName___.Request(type: .doSomething)
         interactor?.process(request: request)
     }
-    
+
+    // MARK: - DisplayLogic
+
     func displaySomething(viewModel: ___VARIABLE_sceneName___.ViewModel) {
+        //...
     }
 }
