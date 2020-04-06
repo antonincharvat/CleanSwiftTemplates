@@ -25,11 +25,15 @@ final class ___VARIABLE_sceneName___Router: ___VARIABLE_sceneName___RoutingLogic
     // MARK: - RoutingLogic
 
     func routeToSomewhere() {
+        guard let viewController = viewController, let dataStore = dataStore else {
+            return
+        }
+
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let destinationVC = storyboard.instantiateViewController(withIdentifier: "___VARIABLE_sceneName___ViewController") as! ___VARIABLE_sceneName___ViewController
-        var destinationDS = destinationVC.router!.dataStore!
-        passDataToSomewhere(source: dataStore!, destination: &destinationDS)
-        navigateToSomewhere(source: viewController!, destination: destinationVC)
+        let destinationViewController = storyboard.instantiateViewController(withIdentifier: "___VARIABLE_sceneName___ViewController") as! ___VARIABLE_sceneName___ViewController
+        var destinationDataStore = destinationViewController.router.dataStore!
+        passDataToSomewhere(source: dataStore, destination: &destinationDataStore)
+        navigateToSomewhere(source: viewController, destination: destinationViewController)
     }
 
     // MARK: - Passing data

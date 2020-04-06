@@ -15,8 +15,8 @@ protocol ___VARIABLE_sceneName___DisplayLogic: AnyObject {
 
 final class ___VARIABLE_sceneName___ViewController: ___VARIABLE_viewControllerSubclass___, ___VARIABLE_sceneName___DisplayLogic {
 
-    var interactor: ___VARIABLE_sceneName___BusinessLogic?
-    var router: (___VARIABLE_sceneName___RoutingLogic & ___VARIABLE_sceneName___DataPassing)?
+    var interactor: ___VARIABLE_sceneName___BusinessLogic!
+    var router: (___VARIABLE_sceneName___RoutingLogic & ___VARIABLE_sceneName___DataPassing)!
 
     // MARK: - Object lifecycle
 
@@ -58,7 +58,7 @@ final class ___VARIABLE_sceneName___ViewController: ___VARIABLE_viewControllerSu
 
     func doSomething() {
         let request = ___VARIABLE_sceneName___.Request(type: .doSomething)
-        interactor?.process(request: request)
+        interactor.process(request: request)
     }
 
     // MARK: - DisplayLogic
