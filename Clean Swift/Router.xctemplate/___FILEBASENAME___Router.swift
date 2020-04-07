@@ -11,6 +11,7 @@ import UIKit
 
 protocol ___VARIABLE_sceneName___RoutingLogic: AnyObject {
     func routeToSomewhere()
+    func routeWithParameters()
 }
 
 protocol ___VARIABLE_sceneName___DataPassing: AnyObject {
@@ -19,32 +20,25 @@ protocol ___VARIABLE_sceneName___DataPassing: AnyObject {
 
 final class ___VARIABLE_sceneName___Router: ___VARIABLE_sceneName___RoutingLogic, ___VARIABLE_sceneName___DataPassing {
 
-    weak var viewController: ___VARIABLE_sceneName___ViewController?
-    weak var dataStore: ___VARIABLE_sceneName___DataStore?
+    private weak var viewController: ___VARIABLE_sceneName___ViewController?
+    private (set) weak var dataStore: ___VARIABLE_sceneName___DataStore?
+    
+    init(viewController: ___VARIABLE_sceneName___ViewController?, dataStore: ___VARIABLE_sceneName___DataStore?) {
+        self.viewController = viewController
+        self.dataStore = dataStore
+    }
 
     // MARK: - RoutingLogic
 
     func routeToSomewhere() {
-        guard let viewController = viewController, let dataStore = dataStore else {
-            return
-        }
-
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let destinationViewController = storyboard.instantiateViewController(withIdentifier: "___VARIABLE_sceneName___ViewController") as! ___VARIABLE_sceneName___ViewController
-        var destinationDataStore = destinationViewController.router.dataStore!
-        passDataToSomewhere(source: dataStore, destination: &destinationDataStore)
-        navigateToSomewhere(source: viewController, destination: destinationViewController)
+//        let destinationViewController = DestinationConfigurator.create()
+//        viewController?.navigationController.push(destinationViewController, animated: true)
     }
-
-    // MARK: - Passing data
-
-    func passDataToSomewhere(source: ___VARIABLE_sceneName___DataStore, destination: inout ___VARIABLE_sceneName___DataStore) {
-        //destination.name = source.name
-    }
-
-    // MARK: - Navigation
-
-    func navigateToSomewhere(source: ___VARIABLE_sceneName___ViewController, destination: ___VARIABLE_sceneName___ViewController) {
-        //source.show(destination, sender: nil)
+    
+    func routeWithParameters() {
+//        guard let name = dataStore?.name else { return }
+//        
+//        let destinationViewController = DestinationConfigurator.create(name: name)
+//        viewController?.navigationController.push(destinationViewController, animated: true)
     }
 }

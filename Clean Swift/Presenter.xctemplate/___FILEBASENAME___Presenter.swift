@@ -10,17 +10,26 @@
 import UIKit
 
 protocol ___VARIABLE_sceneName___PresentationLogic: AnyObject {
-    func presentSomething(response: ___VARIABLE_sceneName___.Response)
+    func present(response: ___VARIABLE_sceneName___.SomeModel.Response)
 }
 
 final class ___VARIABLE_sceneName___Presenter: ___VARIABLE_sceneName___PresentationLogic {
 
-    weak var viewController: ___VARIABLE_sceneName___DisplayLogic?
+    private weak var viewController: ___VARIABLE_sceneName___DisplayLogic?
+    
+    init(viewController: ___VARIABLE_sceneName___DisplayLogic) {
+        self.viewController = viewController
+    }
 
     // MARK: - PresentationLogic
 
-    func presentSomething(response: ___VARIABLE_sceneName___.Response) {
-        let viewModel = ___VARIABLE_sceneName___.ViewModel()
-        viewController?.displaySomething(viewModel: viewModel)
+    func present(response: ___VARIABLE_sceneName___.SomeModel.Response) {
+//        if let data = response.rawData {
+//            let someItem = SomeItem(data)
+//            let viewModel = ___VARIABLE_sceneName___.SomeModel.ViewModel(someItem: someItem)
+//            viewController?.display(viewModel: viewModel)
+//        } else if let error = response.error {
+//            viewController?.display(errorModel: .init(error: error))
+//        }
     }
 }
