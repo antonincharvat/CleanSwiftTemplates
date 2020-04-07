@@ -19,8 +19,8 @@ protocol ___VARIABLE_sceneName___DataStore: AnyObject {
 
 final class ___VARIABLE_sceneName___Interactor: ___VARIABLE_sceneName___BusinessLogic, ___VARIABLE_sceneName___DataStore {
 
-    var presenter: ___VARIABLE_sceneName___PresentationLogic?
-    var worker: ___VARIABLE_sceneName___Worker?
+    var presenter: ___VARIABLE_sceneName___PresentationLogic!
+    var worker: ___VARIABLE_sceneName___Worker!
 
     //private(set) var name: String = ""
 
