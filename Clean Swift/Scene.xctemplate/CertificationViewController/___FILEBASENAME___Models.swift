@@ -13,7 +13,7 @@ enum ___VARIABLE_sceneName___ {
 
     // MARK: - Use cases
 
-    struct Request {
+    enum Request {
         case viewDidLoad
     }
 
@@ -23,7 +23,6 @@ enum ___VARIABLE_sceneName___ {
     }
 
     struct ViewModel {
-        var rawData: AnyObject?
-        var error: Error?
+        var rawData: [AbstractFormModel]
     }
 }

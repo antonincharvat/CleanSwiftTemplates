@@ -20,7 +20,7 @@ final class ___VARIABLE_sceneName___Presenter: ___VARIABLE_sceneName___Presentat
     // MARK: - PresentationLogic
 
     func presentSomething(response: ___VARIABLE_sceneName___.Response) {
-        let viewModel = ___VARIABLE_sceneName___.ViewModel()
+        let viewModel = ___VARIABLE_sceneName___.ViewModel(rawData: [], error: nil)
         viewController?.displaySomething(viewModel: viewModel)
     }
 }

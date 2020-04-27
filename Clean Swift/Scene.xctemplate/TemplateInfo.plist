@@ -144,7 +144,12 @@
 			<key>Required</key>
 			<string>YES</string>
 			<key>Type</key>
-			<string>text</string>
+			<string>class</string>
+			<key>Values</key>
+			<array>
+				<string>UIViewController</string>
+				<string>CertificationViewController</string>
+			</array>
 		</dict>
 	</array>
 	<key>Platforms</key>

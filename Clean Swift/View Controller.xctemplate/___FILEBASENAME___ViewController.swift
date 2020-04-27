@@ -51,14 +51,7 @@ final class ___VARIABLE_sceneName___ViewController: ___VARIABLE_viewControllerSu
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        doSomething()
-    }
-
-    // MARK: - BusinessLogic
-
-    func doSomething() {
-        let request = ___VARIABLE_sceneName___.Request(type: .doSomething)
-        interactor.process(request: request)
+        interactor.process(request: .viewDidLoad)
     }
 
     // MARK: - DisplayLogic
