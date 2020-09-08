@@ -15,6 +15,7 @@ class ___VARIABLE_sceneName___PresenterTests: XCTestCase {
     // MARK: - Subject under test
 
     var sut: ___VARIABLE_sceneName___Presenter!
+    var viewController: ___VARIABLE_sceneName___DisplayLogicSpy!
 
     // MARK: - Test lifecycle
 
@@ -30,17 +31,23 @@ class ___VARIABLE_sceneName___PresenterTests: XCTestCase {
     // MARK: - Test setup
 
     func setup___VARIABLE_sceneName___Presenter() {
-        sut = ___VARIABLE_sceneName___Presenter()
+        viewController = ___VARIABLE_sceneName___DisplayLogicSpy()
+        sut = ___VARIABLE_sceneName___Presenter(viewController: viewController)
     }
 
     // MARK: - Test doubles
 
     class ___VARIABLE_sceneName___DisplayLogicSpy: ___VARIABLE_sceneName___DisplayLogic {
 
-        var displaySomethingCalled = false
+        var displayCalled = false
+        var displayErrorCalled = false
 
-        func displaySomething(viewModel: ___VARIABLE_sceneName___.Something.ViewModel) {
-            displaySomethingCalled = true
+        func display(viewModel: ___VARIABLE_sceneName___.DataModel.ViewModel) {
+            displayCalled = true
+        }
+
+        func displayError(viewModel: ___VARIABLE_sceneName___.ErrorModel.ViewModel) {
+            displayErrorCalled = true
         }
     }
 
@@ -48,14 +55,12 @@ class ___VARIABLE_sceneName___PresenterTests: XCTestCase {
 
     func testPresentSomething() {
         // Given
-        let spy = ___VARIABLE_sceneName___DisplayLogicSpy()
-        sut.viewController = spy
-        let response = ___VARIABLE_sceneName___.Something.Response()
+        let response = ___VARIABLE_sceneName___.DataModel.Response(rawData: "", error: nil)
 
         // When
-        sut.presentSomething(response: response)
+        sut.present(response: response)
 
         // Then
-        XCTAssertTrue(spy.displaySomethingCalled, "presentSomething(response:) should ask the view controller to display the result")
+        XCTAssertTrue(viewController.displayCalled, "present(response:) should ask the view controller to display the result")
     }
 }

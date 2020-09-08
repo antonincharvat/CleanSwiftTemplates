@@ -15,6 +15,8 @@ class ___VARIABLE_sceneName___ViewControllerTests: XCTestCase {
     // MARK: - Subject under test
 
     var sut: ___VARIABLE_sceneName___ViewController!
+    var interactor: ___VARIABLE_sceneName___BusinessLogicSpy!
+    var router: ___VARIABLE_sceneName___RouterSpy!
     var window: UIWindow!
 
     // MARK: - Test lifecycle
@@ -33,9 +35,11 @@ class ___VARIABLE_sceneName___ViewControllerTests: XCTestCase {
     // MARK: - Test setup
 
     func setup___VARIABLE_sceneName___ViewController() {
-        let bundle = Bundle.main
-        let storyboard = UIStoryboard(name: "Main", bundle: bundle)
-        sut = storyboard.instantiateViewController(withIdentifier: "___VARIABLE_sceneName___ViewController") as! ___VARIABLE_sceneName___ViewController
+        sut = ___VARIABLE_sceneName___ViewController()  // replace with proper instantiation
+        interactor = ___VARIABLE_sceneName___BusinessLogicSpy()
+        router = ___VARIABLE_sceneName___RouterSpy()
+        sut.interactor = interactor
+        sut.router = router
     }
 
     func loadView() {
@@ -47,10 +51,19 @@ class ___VARIABLE_sceneName___ViewControllerTests: XCTestCase {
 
     class ___VARIABLE_sceneName___BusinessLogicSpy: ___VARIABLE_sceneName___BusinessLogic {
 
-        var doSomethingCalled = false
+        var processCalled = false
 
-        func doSomething(request: ___VARIABLE_sceneName___.Something.Request) {
-            doSomethingCalled = true
+        func process(request: ___VARIABLE_sceneName___.Request) {
+            processCalled = true
+        }
+    }
+
+    class ___VARIABLE_sceneName___RouterSpy: ___VARIABLE_sceneName___DataPassing, ___VARIABLE_sceneName___RoutingLogic {
+
+        let dataStore: ___VARIABLE_sceneName___DataStore? = nil
+
+        func routeToSomewhere() {
+            //...
         }
     }
 
@@ -58,25 +71,24 @@ class ___VARIABLE_sceneName___ViewControllerTests: XCTestCase {
 
     func testShouldDoSomethingWhenViewIsLoaded() {
         // Given
-        let spy = ___VARIABLE_sceneName___BusinessLogicSpy()
-        sut.interactor = spy
+        //...
 
         // When
         loadView()
 
         // Then
-        XCTAssertTrue(spy.doSomethingCalled, "viewDidLoad() should ask the interactor to do something")
+        XCTAssertTrue(interactor.processCalled, "viewDidLoad() should ask the interactor to do something")
     }
 
     func testDisplaySomething() {
         // Given
-        let viewModel = ___VARIABLE_sceneName___.Something.ViewModel()
+        let viewModel = ___VARIABLE_sceneName___.DataModel.ViewModel(item: "")
 
         // When
         loadView()
-        sut.displaySomething(viewModel: viewModel)
+        sut.display(viewModel: viewModel)
 
         // Then
-        //XCTAssertEqual(sut.nameTextField.text, "", "displaySomething(viewModel:) should update the name text field")
+        //XCTAssertEqual(sut.nameTextField.text, "", "display(viewModel:) should update the name text field")
     }
 }

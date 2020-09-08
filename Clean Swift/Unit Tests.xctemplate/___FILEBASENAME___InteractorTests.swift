@@ -15,6 +15,8 @@ class ___VARIABLE_sceneName___InteractorTests: XCTestCase {
     // MARK: - Subject under test
 
     var sut: ___VARIABLE_sceneName___Interactor!
+    var presenter: ___VARIABLE_sceneName___PresentationLogicSpy!
+    var worker: ___VARIABLE_sceneName___WorkerProtocolMock!
 
     // MARK: - Test lifecycle
 
@@ -30,17 +32,31 @@ class ___VARIABLE_sceneName___InteractorTests: XCTestCase {
     // MARK: - Test setup
 
     func setup___VARIABLE_sceneName___Interactor() {
-        sut = ___VARIABLE_sceneName___Interactor()
+        presenter = ___VARIABLE_sceneName___PresentationLogicSpy()
+        worker = ___VARIABLE_sceneName___WorkerProtocolMock()
+        sut = ___VARIABLE_sceneName___Interactor(presenter: presenter, worker: worker/*, name: ""*/)
     }
 
     // MARK: - Test doubles
 
     class ___VARIABLE_sceneName___PresentationLogicSpy: ___VARIABLE_sceneName___PresentationLogic {
 
-        var presentSomethingCalled = false
+        var presentCalled = false
+        //var presentErrorCalled = false
 
-        func presentSomething(response: ___VARIABLE_sceneName___.Something.Response) {
-            presentSomethingCalled = true
+        func present(response: ___VARIABLE_sceneName___.DataModel.Response) {
+            presentCalled = true
+        }
+
+        //func presentError(response: ___VARIABLE_sceneName___.ErrorModel.Response) {
+        //    presentErrorCalled = true
+        //}
+    }
+
+    class ___VARIABLE_sceneName___WorkerProtocolMock: ___VARIABLE_sceneName___WorkerProtocol {
+
+        func doSomeWork() {
+            //...
         }
     }
 
@@ -48,14 +64,12 @@ class ___VARIABLE_sceneName___InteractorTests: XCTestCase {
 
     func testDoSomething() {
         // Given
-        let spy = ___VARIABLE_sceneName___PresentationLogicSpy()
-        sut.presenter = spy
-        let request = ___VARIABLE_sceneName___.Something.Request()
+        let request = ___VARIABLE_sceneName___.Request.viewDidLoad
 
         // When
-        sut.doSomething(request: request)
+        sut.process(request: request)
 
         // Then
-        XCTAssertTrue(spy.presentSomethingCalled, "doSomething(request:) should ask the presenter to format the result")
+        XCTAssertTrue(presenter.presentCalled, "process(request:) should ask the presenter to format the result")
     }
 }
