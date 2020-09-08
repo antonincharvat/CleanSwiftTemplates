@@ -21,13 +21,18 @@ enum ___VARIABLE_sceneName___ {
         let type: RequestType
     }
 
-    struct Response {
-        var rawData: AnyObject?
-        var error: Error?
-    }
+    enum SomeModel {
+        struct Response {
+            let rawData: AnyObject?
+            let error: Error?
+        }
 
-    struct ViewModel {
-        var rawData: AnyObject?
-        var error: Error?
+        struct ViewModel {
+            let someItem: AnyObject
+        }
+    }
+    
+    struct ErrorModel {
+        let error: Error
     }
 }
