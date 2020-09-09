@@ -17,28 +17,37 @@ protocol ___VARIABLE_sceneName___DataStore: AnyObject {
     //var name: String { get }
 }
 
-final class ___VARIABLE_sceneName___Interactor: ___VARIABLE_sceneName___BusinessLogic, ___VARIABLE_sceneName___DataStore {
+final class ___VARIABLE_sceneName___Interactor: ___VARIABLE_sceneName___DataStore {
 
     private let presenter: ___VARIABLE_sceneName___PresentationLogic
-    private let worker: ___VARIABLE_sceneName___Worker
+    private let worker: ___VARIABLE_sceneName___WorkerProtocol
 
-    //private(set) var name: String = ""
+    //private(set) var name: String
 
-    init(presenter: ___VARIABLE_sceneName___PresentationLogic, worker: ___VARIABLE_sceneName___Worker) {
+    init(presenter: ___VARIABLE_sceneName___PresentationLogic, worker: ___VARIABLE_sceneName___WorkerProtocol/*, name: String*/) {
         self.presenter = presenter
         self.worker = worker
+        //self.name = name
     }
-    
-    // MARK: - BusinessLogic
+}
+
+// MARK: - BusinessLogic
+
+extension ___VARIABLE_sceneName___Interactor: ___VARIABLE_sceneName___BusinessLogic {
 
     func process(request: ___VARIABLE_sceneName___.Request) {
-        switch request.type {
-        case .doSomething:
-            doSomething()
+        switch request {
+        case .viewDidLoad:
+            viewDidLoad()
         }
     }
+}
 
-    private func doSomething() {
+// MARK: - Private
+
+private extension ___VARIABLE_sceneName___Interactor {
+
+    func viewDidLoad() {
         //...
     }
 }

@@ -13,26 +13,28 @@ enum ___VARIABLE_sceneName___ {
 
     // MARK: - Use cases
 
-    struct Request {
-        enum RequestType {
-            case doSomething
-        }
-
-        let type: RequestType
+    enum Request {
+        case viewDidLoad
     }
 
-    enum SomeModel {
+    enum DataModel {
         struct Response {
-            let rawData: AnyObject?
+            let rawData: Any?
             let error: Error?
         }
 
         struct ViewModel {
-            let someItem: AnyObject
+            let item: Any
         }
     }
-    
-    struct ErrorModel {
-        let error: Error
+
+    enum ErrorModel {
+        //struct Response {
+        //    let rawError: Error
+        //}
+
+        struct ViewModel {
+            let error: Error
+        }
     }
 }
