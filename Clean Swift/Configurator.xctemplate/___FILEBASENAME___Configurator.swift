@@ -10,6 +10,8 @@
 import Foundation
 
 struct ___VARIABLE_sceneName___Configurator {
+
+    private init() {}
     
     static func create(/*name: String*/) -> ___VARIABLE_sceneName___ViewController {
         let viewController = ___VARIABLE_sceneName___ViewController()  // replace with proper instantiation
