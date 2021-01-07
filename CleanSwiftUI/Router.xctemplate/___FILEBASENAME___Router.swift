@@ -9,9 +9,10 @@
 
 import Foundation
 
-final class ___VARIABLE_sceneName___Worker {
-
-    func doSomeWork() {
-        //...
-    }
+struct ___VARIABLE_sceneName___Router {
+    let dataStore: ___VARIABLE_sceneName___DataStore
+//   let detailConfigurator: DetailConfigurator
+    
+//    func detailView() -> DetailView {
+//    }
 }

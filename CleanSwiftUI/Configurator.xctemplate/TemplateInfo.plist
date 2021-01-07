@@ -5,7 +5,7 @@
 	<key>DefaultCompletionName</key>
 	<string>MyScene</string>
   <key>Description</key>
-  <string>This generates a new router using Uncle Bob's clean architecture. You navigate to other scenes by presenting and dismissing other view controllers here.</string>
+  <string>This generates configurator for creating of the scene parts with their dependencies.</string>
   <key>Kind</key>
   <string>Xcode.IDEKit.TextSubstitutionFileTemplateKind</string>
   <key>Options</key>
@@ -32,28 +32,14 @@
 			<key>Type</key>
 			<string>static</string>
     </dict>
-    <dict>
-			<key>Default</key>
-			<string>___VARIABLE_sceneName:identifier___Router</string>
-			<key>Description</key>
-			<string>The router name</string>
-			<key>Identifier</key>
-			<string>routerName</string>
-			<key>Name</key>
-			<string>Router Name:</string>
-			<key>Required</key>
-			<true/>
-			<key>Type</key>
-			<string>static</string>
-    </dict>
   </array>
   <key>Platforms</key>
   <array>
 		<string>com.apple.platform.iphoneos</string>
   </array>
 	<key>SortOrder</key>
-	<string>6</string>
+	<string>4</string>
   <key>Summary</key>
-  <string>This generates a new router using Uncle Bob's clean architecture. You navigate to other scenes by presenting and dismissing other view controllers here.</string>
+  <string>This generates configurator for creating of the scene parts with their dependencies.</string>
 </dict>
 </plist>

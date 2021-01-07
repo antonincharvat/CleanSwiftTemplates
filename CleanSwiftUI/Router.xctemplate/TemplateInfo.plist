@@ -5,7 +5,7 @@
 	<key>DefaultCompletionName</key>
 	<string>MyScene</string>
   <key>Description</key>
-  <string>This generates a new presenter using Uncle Bob's clean architecture. Your presentation logic goes here.</string>
+  <string>This generates a new router.</string>
   <key>Kind</key>
   <string>Xcode.IDEKit.TextSubstitutionFileTemplateKind</string>
   <key>Options</key>
@@ -34,13 +34,13 @@
     </dict>
     <dict>
 			<key>Default</key>
-			<string>___VARIABLE_sceneName:identifier___Presenter</string>
+			<string>___VARIABLE_sceneName:identifier___Router</string>
 			<key>Description</key>
-			<string>The presenter name</string>
+			<string>The router name</string>
 			<key>Identifier</key>
-			<string>presenterName</string>
+			<string>routerName</string>
 			<key>Name</key>
-			<string>Presenter Name:</string>
+			<string>Router Name:</string>
 			<key>Required</key>
 			<true/>
 			<key>Type</key>
@@ -52,8 +52,8 @@
 		<string>com.apple.platform.iphoneos</string>
   </array>
 	<key>SortOrder</key>
-	<string>3</string>
+	<string>6</string>
   <key>Summary</key>
-  <string>This generates a new presenter using Uncle Bob's clean architecture. Your presentation logic goes here.</string>
+  <string>This generates a new router.</string>
 </dict>
 </plist>

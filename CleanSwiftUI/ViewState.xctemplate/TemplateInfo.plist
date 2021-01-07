@@ -5,7 +5,7 @@
 	<key>DefaultCompletionName</key>
 	<string>MyScene</string>
   <key>Description</key>
-  <string>This generates a new set of boundary models between the view controller, interactor, presenter, and router using Uncle Bob's clean architecture.</string>
+  <string>This generates a view state for SwiftUI view.</string>
   <key>Kind</key>
   <string>Xcode.IDEKit.TextSubstitutionFileTemplateKind</string>
   <key>Options</key>
@@ -32,14 +32,28 @@
 			<key>Type</key>
 			<string>static</string>
     </dict>
+    <dict>
+			<key>Default</key>
+			<string>___VARIABLE_sceneName:identifier___ViewState</string>
+			<key>Description</key>
+			<string>The view state name</string>
+			<key>Identifier</key>
+			<string>viewStateName</string>
+			<key>Name</key>
+			<string>View state Name:</string>
+			<key>Required</key>
+			<true/>
+			<key>Type</key>
+			<string>static</string>
+    </dict>
   </array>
   <key>Platforms</key>
   <array>
 		<string>com.apple.platform.iphoneos</string>
   </array>
 	<key>SortOrder</key>
-	<string>4</string>
+	<string>3</string>
   <key>Summary</key>
-  <string>This generates a new set of boundary models between the view controller, interactor, presenter, and router using Uncle Bob's clean architecture.</string>
+  <string>This generates a view state for SwiftUI view.</string>
 </dict>
 </plist>

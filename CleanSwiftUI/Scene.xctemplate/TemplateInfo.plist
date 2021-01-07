@@ -5,7 +5,7 @@
 	<key>DefaultCompletionName</key>
 	<string>MyScene</string>
 	<key>Description</key>
-	<string>This generates a new scene using Uncle Bob&apos;s clean architecture. It consists of the view controller, interactor, presenter, and router. You can then create individual workers to supplement the interactor.</string>
+	<string>This generates a new SwiftUI scene.</string>
 	<key>Kind</key>
 	<string>Xcode.IDEKit.TextSubstitutionFileTemplateKind</string>
 	<key>Options</key>
@@ -34,11 +34,11 @@
 		</dict>
 		<dict>
 			<key>Default</key>
-			<string>___VARIABLE_sceneName:identifier___ViewController</string>
+			<string>___VARIABLE_sceneName:identifier___View</string>
 			<key>Description</key>
 			<string>The view controller name</string>
 			<key>Identifier</key>
-			<string>viewControllerName</string>
+			<string>ViewName</string>
 			<key>Name</key>
 			<string>View Controller Name:</string>
 			<key>Required</key>
@@ -62,13 +62,13 @@
 		</dict>
 		<dict>
 			<key>Default</key>
-			<string>___VARIABLE_sceneName:identifier___Presenter</string>
+			<string>___VARIABLE_sceneName:identifier___ViewState</string>
 			<key>Description</key>
-			<string>The presenter name</string>
+			<string>The ViewState name</string>
 			<key>Identifier</key>
-			<string>presenterName</string>
+			<string>ViewStateName</string>
 			<key>Name</key>
-			<string>Presenter Name:</string>
+			<string>ViewState Name:</string>
 			<key>Required</key>
 			<true/>
 			<key>Type</key>
@@ -116,36 +116,6 @@
 			<key>Type</key>
 			<string>static</string>
 		</dict>
-		<dict>
-			<key>Default</key>
-			<string>___VARIABLE_sceneName:identifier___Models</string>
-			<key>Description</key>
-			<string>The model file name</string>
-			<key>Identifier</key>
-			<string>modelFileName</string>
-			<key>Name</key>
-			<string>Model File Name:</string>
-			<key>Required</key>
-			<true/>
-			<key>Type</key>
-			<string>static</string>
-		</dict>
-		<dict>
-			<key>Default</key>
-			<string>UIViewController</string>
-			<key>Description</key>
-			<string>What view controller class to subclass for the new scene</string>
-			<key>Identifier</key>
-			<string>viewControllerSubclass</string>
-			<key>Name</key>
-			<string>Subclass of:</string>
-			<key>NotPersisted</key>
-			<true/>
-			<key>Required</key>
-			<string>YES</string>
-			<key>Type</key>
-			<string>text</string>
-		</dict>
 	</array>
 	<key>Platforms</key>
 	<array>
@@ -154,6 +124,6 @@
 	<key>SortOrder</key>
 	<string>0</string>
 	<key>Summary</key>
-	<string>This generates a new scene using Uncle Bob&apos;s clean architecture.</string>
+	<string>This generates a new SwiftUI scene.</string>
 </dict>
 </plist>
