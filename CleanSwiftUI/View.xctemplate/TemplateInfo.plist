@@ -5,7 +5,7 @@
 	<key>DefaultCompletionName</key>
 	<string>MyScene</string>
 	<key>Description</key>
-	<string>This generates a new view controller using Uncle Bob&apos;s clean architecture. Your view/view controller logic goes here.</string>
+	<string>This generates a new View.</string>
 	<key>Kind</key>
 	<string>Xcode.IDEKit.TextSubstitutionFileTemplateKind</string>
 	<key>Options</key>
@@ -34,33 +34,17 @@
 		</dict>
 		<dict>
 			<key>Default</key>
-			<string>___VARIABLE_sceneName:identifier___ViewController</string>
+			<string>___VARIABLE_sceneName:identifier___View</string>
 			<key>Description</key>
-			<string>The view controller name</string>
+			<string>The View name</string>
 			<key>Identifier</key>
-			<string>viewControllerName</string>
+			<string>ViewName</string>
 			<key>Name</key>
-			<string>View Controller Name:</string>
+			<string>View Name:</string>
 			<key>Required</key>
 			<true/>
 			<key>Type</key>
 			<string>static</string>
-		</dict>
-		<dict>
-			<key>Default</key>
-			<string>UIViewController</string>
-			<key>Description</key>
-			<string>What view controller class to subclass for the new scene</string>
-			<key>Identifier</key>
-			<string>viewControllerSubclass</string>
-			<key>Name</key>
-			<string>Subclass of:</string>
-			<key>NotPersisted</key>
-			<true/>
-			<key>Required</key>
-			<string>YES</string>
-			<key>Type</key>
-			<string>text</string>
 		</dict>
 	</array>
 	<key>Platforms</key>
@@ -70,6 +54,6 @@
 	<key>SortOrder</key>
 	<string>1</string>
 	<key>Summary</key>
-	<string>This generates a new view controller using Uncle Bob&apos;s clean architecture. Your view/view controller logic goes here.</string>
+	<string>This generates a new View.</string>
 </dict>
 </plist>

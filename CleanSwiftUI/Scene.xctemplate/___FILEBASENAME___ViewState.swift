@@ -1,0 +1,1 @@
+../ViewState.xctemplate/___FILEBASENAME___ViewState.swift

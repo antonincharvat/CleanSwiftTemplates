@@ -4,12 +4,12 @@
 <dict>
 	<key>DefaultCompletionName</key>
 	<string>MyScene</string>
-    <key>Description</key>
-    <string>This generates a new router using Uncle Bob's clean architecture. You navigate to other scenes by presenting and dismissing other view controllers here.</string>
-    <key>Kind</key>
-    <string>Xcode.IDEKit.TextSubstitutionFileTemplateKind</string>
-    <key>Options</key>
-    <array>
+  <key>Description</key>
+  <string>This generates a view state for SwiftUI view.</string>
+  <key>Kind</key>
+  <string>Xcode.IDEKit.TextSubstitutionFileTemplateKind</string>
+  <key>Options</key>
+  <array>
 		<dict>
 			<key>Description</key>
 			<string>The name of the scene to create</string>
@@ -24,36 +24,36 @@
 			<key>Type</key>
 			<string>text</string>
 		</dict>
-        <dict>
+    <dict>
 			<key>Default</key>
 			<string>___VARIABLE_sceneName:identifier___</string>
 			<key>Identifier</key>
 			<string>productName</string>
 			<key>Type</key>
 			<string>static</string>
-        </dict>
-        <dict>
+    </dict>
+    <dict>
 			<key>Default</key>
-			<string>___VARIABLE_sceneName:identifier___Router</string>
+			<string>___VARIABLE_sceneName:identifier___ViewState</string>
 			<key>Description</key>
-			<string>The router name</string>
+			<string>The view state name</string>
 			<key>Identifier</key>
-			<string>routerName</string>
+			<string>viewStateName</string>
 			<key>Name</key>
-			<string>Router Name:</string>
+			<string>View state Name:</string>
 			<key>Required</key>
 			<true/>
 			<key>Type</key>
 			<string>static</string>
-        </dict>
-    </array>
-    <key>Platforms</key>
-    <array>
+    </dict>
+  </array>
+  <key>Platforms</key>
+  <array>
 		<string>com.apple.platform.iphoneos</string>
-    </array>
+  </array>
 	<key>SortOrder</key>
-	<string>6</string>
-    <key>Summary</key>
-    <string>This generates a new router using Uncle Bob's clean architecture. You navigate to other scenes by presenting and dismissing other view controllers here.</string>
+	<string>3</string>
+  <key>Summary</key>
+  <string>This generates a view state for SwiftUI view.</string>
 </dict>
 </plist>
