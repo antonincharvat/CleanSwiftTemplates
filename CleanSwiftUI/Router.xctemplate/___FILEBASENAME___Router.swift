@@ -11,8 +11,8 @@ import Foundation
 
 struct ___VARIABLE_sceneName___Router {
     let dataStore: ___VARIABLE_sceneName___DataStore
-//   let detailConfigurator: DetailConfigurator
+    // let detailConfigurator: DetailConfigurator
     
-//    func detailView() -> DetailView {
-//    }
+    // func detailView() -> DetailView {
+    // }
 }

@@ -1,1 +1,0 @@
-../Worker.xctemplate/___FILEBASENAME___Worker.swift

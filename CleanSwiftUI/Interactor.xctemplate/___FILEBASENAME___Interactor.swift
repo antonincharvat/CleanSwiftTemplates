@@ -16,10 +16,8 @@ enum ___VARIABLE_sceneName___Action: ActionType {
 protocol ___VARIABLE_sceneName___DataStore {}
 
 struct ___VARIABLE_sceneName___Interactor {
-
     let present: (___VARIABLE_sceneName___Action) -> Void
     let dataStore: ___VARIABLE_sceneName___DataStore
-    let worker: ___VARIABLE_sceneName___WorkerProtocol
 }
 
 // MARK: - BusinessLogic
